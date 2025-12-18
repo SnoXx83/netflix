@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../Auth/Authscript.js"></script>
+    <link href="../../public/css/style.css" rel="stylesheet" />
+    <title>Page d'Accueil</title>
+</head>
+
+<body class="bg-3">
+    <header class="navbar">
+        <div class="d-flex space-around align-center">
+            <a href="../user/Profil.html">
+                <img class="logo"
+                    src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2025-12-03/consent/87b6a5c0-0104-4e96-a291-092c11350111/019ae4b5-d8b1-7864-8e94-75a86b260122/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+                    alt="Logo de netflix" style="width: 15rem;">
+            </a>
+            <div class="d-flex align-center">
+                <div id="username"></div>
+                <div class="navContainer">
+                    <img class="profil-img" src="../../public/image/profil.jpg" alt="Image de profil">
+                    <ul class="sub-menu">
+                        <li><a href="../user/Profil.html">Accueil</a></li>
+                        <li><a href="../ProfilePage.html">Mon Profil</a></li>
+                        <li><a href="#">Paramètres</a></li>
+                        <li>
+                            <hr>
+                        </li>
+                        <li><a href="#" id="logoutBtn">Déconnexion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="signupForm">
+        <form id="profileForm" class="d-flex flex-column text-center">
+            <div class="profile-section ">
+                <h2>Informations personelles</h2>
+                <div class="d-flex">
+                    <div class="d-flex">
+                        <div class="mr-1">
+                            <input type="text" id="lastName" placeholder="Nom">
+                        </div>
+                        <div>
+                            <input type="text" id="firstName" placeholder="Prénom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-center ">
+                <input type="email" id="mail" placeholder="Adresse e-mail" />
+                <input type="password" id="password" placeholder="Mot de passe" />
+                <input type="password" id="confirmPassword" placeholder="Confirmation du mot de passe" />
+                <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+                <button type="submit" class="btn btn-secondary">Supprimer le compte</button>
+                <div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

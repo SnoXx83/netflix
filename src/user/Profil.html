@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../Auth/Authscript.js"></script>
     <link href="../../public/css/style.css" rel="stylesheet" />
     <title>Page d'Accueil</title>
 </head>
@@ -18,8 +19,19 @@
                         alt="Logo de netflix" style="width: 15rem;">
                 </a>
                 <div class="d-flex align-center">
-                    <div>Maxime Larquetoux</div>
-                    <img class="profil-img" src="../../public/image/profil.jpg" alt="Image de profil">
+                    <div id="username"></div>
+                    <div class="navContainer">
+                        <img class="profil-img" src="../../public/image/profil.jpg" alt="Image de profil">
+                        <ul class="sub-menu">
+                            <li><a href="../user/Profil.html">Accueil</a></li>
+                            <li><a href="../user/Config.html">Mon Profil</a></li>
+                            <li><a href="#">Paramètres</a></li>
+                            <li>
+                                <hr>
+                            </li>
+                            <li><a href="#" id="logoutBtn">Déconnexion</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </header>

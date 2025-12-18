@@ -21,6 +21,10 @@ body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../image/background.jpg");
 }
 
+.bg-3{
+    background-color: #141414;
+}
+
 .mr-1{
     margin-right: 1rem;
 }
@@ -95,6 +99,7 @@ a{
 
 .btn-secondary {
     background-color: black;
+    border: 1px solid white;
 }
 
 
@@ -189,6 +194,50 @@ input::placeholder {
     background-color: #0a0a0a67;
     box-shadow: 0 5px 40px 5px rgba(0, 0, 0, 0.5);
 }
+
+
+/* SubNav */
+
+.navContainer {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #141414;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    min-width: 160px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.navContainer:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 1rem 2rem;
+}
+
+.sub-menu li a:hover {
+    background-color: #b20710;
+}
+
+
+/* Body profile part */
 
 .discover{
     top: 20rem;

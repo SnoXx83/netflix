@@ -54,7 +54,8 @@ if (signInForm) {
         const storedDatas = localStorage.getItem(email);
 
         if (!storedDatas) {
-            alert("l'email de correspond pas !")
+            alert("l'email de correspond pas !");
+            return;
         }
 
         // Transform the datas in JSON for get the password
@@ -64,7 +65,44 @@ if (signInForm) {
         if (userObject.password !== password) {
             alert("le mot de passe de correspond pas !")
         } else {
-            console.log("Match ! Connexion en cours...");
+            // Save the session email
+            localStorage.setItem('activeUser', email);
+
+            window.location.href = "../user/Profil.html";
         }
     })
 }
+
+const profileName = document.getElementById('username');
+
+if (profileName) {
+    const activeEmail = localStorage.getItem('activeUser');
+
+    if (activeEmail) {
+        const userData = JSON.parse(localStorage.getItem(activeEmail));
+        profileName.textContent = userData.firstName + "" + userData.lastName;
+    }else{
+        // if nobody is connected , reddirect to login page
+        window.location.href = "../Auth/SigninPage.html";
+    }
+}
+
+const profileForm= document.getElementById('profileForm');
+
+if(profileForm){
+    const activeEmail = localStorage.getItem('activeUser');
+
+    if(activeEmail){
+        const userData= JSON.parse(localStorage.getItem(activeEmail));
+
+        document.getElementById('lastName').value =userData.lastName || "";
+        document.getElementById('firstName').value =userData.firstName || "";
+        document.getElementById('mail').value =userData.email || "";
+        document.getElementById('password').value =userData.password || "";
+
+
+    }
+}
+
+
+
