@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="../Auth/Authscript.js"  ></script>
     <link href="../../public/css/style.css" rel="stylesheet" />
     <title>Inscription</title>
 </head>
@@ -20,18 +21,18 @@
     </header>
 
     <div class="signinForm">
-        <form class="d-flex flex-column text-center">
+        <form id="signIn" class="d-flex flex-column text-center">
             <h2>Connexion</h2>
             <div class="d-flex flex-column justify-center ">
                 <input type="email" id="email" placeholder="Adresse e-mail" />
                 <input type="password" id="password" placeholder="Mot de passe" />
                 <a href="#">Mot de passe oublié ?</a>
                 <button class="btn btn-primary">Se connecter</button>
-                <div>
-                    Pas de compte ? <strong>
-                        <a href="../Auth/SignupPage.html">S'inscrire</a>
-                    </strong>
-                </div>
+            </div>
+            <div>
+                Pas de compte ? <strong>
+                    <button type="submit" href="../Auth/SignupPage.html">S'inscrire</button>
+                </strong>
             </div>
         </form>
     </div>
