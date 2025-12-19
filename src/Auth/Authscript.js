@@ -101,7 +101,7 @@ if (profileName) {
 
     if (activeEmail) {
         const userData = JSON.parse(localStorage.getItem(activeEmail));
-        profileName.textContent = userData.firstName + "" + userData.lastName;
+        profileName.textContent = userData.firstName + " " + userData.lastName;
     } else {
         // if nobody is connected , reddirect to login page
         window.location.href = "../Auth/SigninPage.html";
