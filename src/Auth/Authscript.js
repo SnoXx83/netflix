@@ -1,3 +1,5 @@
+import bcrypt from 'bcryptjs';
+
 
 // Managing redirections if the user is already logged in
 const activeUser = localStorage.getItem('activeUser');
@@ -12,8 +14,8 @@ const isGuestPage =
 // Redirection  
 if (activeUser && isGuestPage) {
     if (window.location.pathname.includes("index.html") || window.location.pathname.endsWith("/")) {
-        window.location.href = "src/user/Profil.html"; 
-    }else {
+        window.location.href = "src/user/Profil.html";
+    } else {
         window.location.href = "../user/Profil.html";
     }
 }
@@ -42,12 +44,17 @@ if (signupForm) {
             return;
         }
 
+        // Creating the salt
+        const salt = bcrypt.genSaltSync(10);
+        // hashing password with salt
+        const hashedPassword = bcrypt.hashSync(password, salt);
+
         // save datas in user Object
         const user = {
             lastName: lastName,
             firstName: firstName,
             email: email,
-            password: password,
+            password: hashedPassword,
         };
 
         // Save user Object in the localStorage with a unique key => email
@@ -82,13 +89,14 @@ if (signInForm) {
         // Transform the datas in JSON for get the password
         const userObject = JSON.parse(storedDatas);
 
-        // Compare the storedPassword with the actual password
-        if (userObject.password !== password) {
-            alert("le mot de passe de correspond pas !")
-        } else {
-            // Save the session email
-            localStorage.setItem('activeUser', email);
+        // The password is compared 
+        const isPasswordCorrect = bcrypt.compareSync(password, userObject.password);
 
+        if (!isPasswordCorrect) {
+            alert("Le mot de passe ne correspond pas !");
+        } else {
+            localStorage.setItem('activeUser', email);
+            
             window.location.href = "../user/Profil.html";
         }
     })
