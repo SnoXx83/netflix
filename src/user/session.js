@@ -33,11 +33,11 @@ export const session = {
         if (activeUser && isGuestPage) {
 
             // This ensures the user stays in the "app" area
-            window.location.href = "/nestflux/src/user/Session.html"
+            window.location.href = "/nestflux/src/user/session.html"
 
         } else if (!activeUser && !isGuestPage) {
             // If not logged in and trying to access a restricted page, redirect to Sign-in
-            window.location.href = "/nestflux/src/Auth/SigninPage.html";
+            window.location.href = "/nestflux/src/auth/SigninPage.html";
         }
     }
 };

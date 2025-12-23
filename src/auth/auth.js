@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { displayMessage } from '../Animations/Ui.js';
+import { displayMessage } from '../animations/ui.js';
 import { session } from '../user/session.js';
 
 
@@ -38,7 +38,7 @@ export function handleSignUp(event) {
 
     // Show success message and redirect to login page
     displayMessage("L'inscription est un succès. Redirection...", "success");
-    setTimeout(() => window.location.href = "../Auth/SigninPage.html", 1500);
+    setTimeout(() => window.location.href = "../auth/SigninPage.html", 1500);
 }
 
 // Handle user login (Sign-in)
@@ -62,12 +62,12 @@ export function handleSignIn(event) {
     displayMessage("Connexion réussi !", "success");
 
     // Redirect to the profile page
-    setTimeout(() => window.location.href = "../user/Session.html", 1000);
+    setTimeout(() => window.location.href = "../user/session.html", 1000);
 }
 
 // Handle user logout
 export function handleLogout() {
     // Clear the active session and redirect to sign-in page
     localStorage.removeItem('activeUser');
-    window.location.href = "../Auth/SigninPage.html";
+    window.location.href = "../auth/SigninPage.html";
 }
