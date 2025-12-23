@@ -69,5 +69,5 @@ export function handleSignIn(event) {
 export function handleLogout() {
     // Clear the active session and redirect to sign-in page
     localStorage.removeItem('activeUser');
-    window.location.href = "/nestflux/src/Auth/SigninPage.html";
+    window.location.href = "/nestflux/src/auth/SigninPage.html";
 }
